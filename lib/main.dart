@@ -555,14 +555,18 @@ class _MonthDetailsPageState extends State<MonthDetailsPage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          setState(() {
-            widget.store.addRow(widget.month);
-          });
-        },
-        icon: const Icon(Icons.add),
-        label: const Text('إضافة صف'),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom + 30),
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            setState(() {
+              widget.store.addRow(widget.month);
+            });
+          },
+          icon: const Icon(Icons.add),
+          label: const Text('إضافة صف'),
+        ),
       ),
     );
   }
